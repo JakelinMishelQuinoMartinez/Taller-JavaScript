@@ -98,3 +98,18 @@ function registrarHabitacion() {
         menuPrincipal();
     }, 2000);
 }
+
+// 2. LISTAR HABITACIONES
+function listarHabitaciones() {
+    if (habitaciones.length === 0) {
+        console.log("No existen registros.");
+    } else {
+        console.log("--- Lista de Habitaciones ---");
+        habitaciones.forEach((h) => {
+            console.log(`Habitación ${h.numero}: ${h.tipo} | Precio: ${h.precioNoche} | Estado: ${h.estado} | Huésped: ${h.huesped}`);
+        });
+    }
+    menuPrincipal();
+}
+
+menuPrincipal();
