@@ -112,4 +112,20 @@ function listarHabitaciones() {
     menuPrincipal();
 }
 
+//3. BUSCAR HABITACIÓN POR NÚMERO
+function buscarHabitacion() {
+    const numBuscar = parseInt(prompt("Ingrese el número de habitación que busca:"));
+    console.log("Consultando la base de datos del hotel...");
+
+    setTimeout (()=>{
+        const encontrada = habitaciones.find(h => h.numero === numBuscar);
+        if (encontrada){
+            console.log("Resultado:", encontrada)
+        } else {
+            console.log("Haitación no encontrada")
+        }
+        menuPrincipal()
+    },2000)
+}
+
 menuPrincipal();
