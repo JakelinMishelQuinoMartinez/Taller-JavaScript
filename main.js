@@ -75,4 +75,26 @@ function menuPrincipal(){
             menuPrincipal();
     }
 }
-menuPrincipal();
+
+//1. REGISTRAR NUEVA HABITACIÓN
+function registrarHabitacion() {
+    const numero = parseInt(prompt("Número de la habitación:"));
+    const tipo = prompt("Tipo (Sencilla, Doble o Suite):");
+    const precioNoche = parseFloat(prompt("Precio por noche:"));
+    const estado = prompt("Estado (libre, Ocupado o limpieza):");
+    const huesped = prompt("Nombre del huésped:");
+    console.log("Validando información de la habitación...");
+
+    setTimeout(() => {
+        const nuevaHab = {
+            numero: numero,
+            tipo: tipo,
+            precioNoche: precioNoche,
+            estado: estado,
+            huesped: huesped,
+        };
+        habitaciones.push(nuevaHab);
+        console.log("Habitación registrada correctamente.");
+        menuPrincipal();
+    }, 2000);
+}
