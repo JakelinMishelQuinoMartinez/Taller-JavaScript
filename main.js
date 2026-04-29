@@ -36,3 +36,43 @@ const habitacionCinco = {
     estado: "limpieza",
     huesped: "vacío",
 }
+
+//ARREGLO DE HABITACIONES
+let habitaciones = [habitacionUno, habitacionDos, habitacionTres, habitacionCuatro, habitacionCinco,]
+
+function menuPrincipal(){
+    let opc = prompt(
+        "============= HOTEL =============\n"+
+        "1. Registrar nueva habitación\n"+
+        "2. Listar habitaciones\n"+
+        "3. Buscar habitación por número\n"+
+        "4. Cambiar estado de una Habitación\n"+
+        "5. Eliminar Habitación\n"+
+        "6. Salir\n"+
+        "========= Elija una opción =========="
+    );
+    switch(opc){
+        case "1":
+            registrarHabitacion();
+            break;
+        case "2":
+            listarHabitaciones();
+            break;
+        case "3":
+            buscarHabitacion();
+            break;
+        case "4":
+            cambiarEstado();
+            break;
+        case "5":
+            eliminarHabitación();
+            break;
+        case "6":
+            console.log("¡Saliendo!")
+            break;
+        default:
+            console.log("Ingrese un valor válido");
+            menuPrincipal();
+    }
+}
+menuPrincipal();
