@@ -128,4 +128,26 @@ function buscarHabitacion() {
     },2000)
 }
 
+// 4. CAMBIAR ESTADO DE UNA HABITACIÓN
+function cambiarEstado() {
+    const numBuscar = parseInt(prompt("Ingrese el número de la habitación:"));
+    console.log("Esperando al personal del hotel...");
+
+    setTimeout(() => {
+        const encontrada = habitaciones.find(h => h.numero === numBuscar);
+        if (encontrada) {
+            const nuevoEstado = prompt("Nuevo estado (libre, Ocupado o limpieza):");
+            encontrada.estado = nuevoEstado;
+            if (nuevoEstado.toLowerCase() === "ocupado") {
+                encontrada.huesped = prompt("Nombre del huésped:");
+            } else if (nuevoEstado.toLowerCase() === "libre") {
+                encontrada.huesped = "vacío";
+            }
+            console.log("Estado actualizado.");
+        } else {
+            console.log("La habitación no encontrada");
+        }
+        menuPrincipal();
+    }, 3000);
+}
 menuPrincipal();
