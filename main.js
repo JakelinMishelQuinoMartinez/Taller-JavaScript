@@ -79,6 +79,11 @@ function menuPrincipal(){
 //1. REGISTRAR NUEVA HABITACIÓN
 function registrarHabitacion() {
     const numero = parseInt(prompt("Número de la habitación:"));
+    const existe = habitaciones.find(h => h.numero === numero);
+    if (existe) {
+        console.log(`¡Error! La habitación ${numero} ya existe!`);
+        return menuPrincipal();
+    }
     const tipo = prompt("Tipo (Sencilla, Doble o Suite):");
     const precioNoche = parseFloat(prompt("Precio por noche:"));
     const estado = prompt("Estado (libre, Ocupado o limpieza):");
