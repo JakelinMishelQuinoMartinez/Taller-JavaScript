@@ -150,4 +150,19 @@ function cambiarEstado() {
         menuPrincipal();
     }, 3000);
 }
+
+// 5. ELIMINAR HABITACION
+function eliminarHabitación() {
+    const numEliminar = parseInt(prompt("Ingrese el número de habitación a eliminar:"));
+    const index = habitaciones.findIndex(h => h.numero === numEliminar);
+
+    if (index !== -1) {
+        habitaciones.splice(index, 1);
+        console.log("Habitación eliminada...");
+    } else {
+        console.log("No se encontró la habitación.")
+    }
+    menuPrincipal();
+}
+
 menuPrincipal();
